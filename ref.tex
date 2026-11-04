@@ -1,5 +1,6 @@
 \documentclass[platex]{jlreq}
-\usepackage{url}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
 
 \title{AIでソフトウェアを開発できても、それが研究の目的に合い、結果を信頼できるものか確かめることが本質的なボトルネックになるという話\par
        \large SPReADコミュニティ発表の参考文献リスト}
@@ -50,8 +51,9 @@
 
 \subsection{2020--2021年：言語モデルからコード補完へ}
 
-2020年のGPT-3は，指示や少数の例を入力に添えて，
-さまざまな課題に対応できることを示した\cite{openai2020gpt3}。
+OpenAIの2020年5月28日の研究紹介は，GPT-3に少数の例を入力として与え，
+追加学習なしにさまざまな言語課題を解かせる評価を要約している
+\cite{openai2020gpt3}。
 2021年には，公開コードで追加学習したCodexの論文が，
 短い説明からPythonの関数を生成し，テストで確かめる評価
 （HumanEval）を報告した\cite{chen2021codex}。
@@ -65,8 +67,9 @@
 調べる例を紹介した\cite{openai2022chatgpt}。
 開発者は，候補を採用するか選ぶだけでなく，エラーの理由を尋ね，
 条件を補足しながら修正を依頼できるようになった。
-2023年に発表されたGitHub Copilot Xは，
-こうした対話を開発環境の中で使う方向を示した\cite{github2023copilotx}。
+2023年3月22日のGitHub Copilot Xの発表では，エディタ内のチャットを通じて，
+コードの説明を求めたり，不具合の修正を依頼したりする構想が紹介された
+\cite{github2023copilotx}。
 
 \subsection{2024年：既存のプロジェクトを対象とする研究}
 
@@ -85,8 +88,8 @@ AIが修正を加えて所定のテストを通せるかを評価する課題集
 プルリクエスト（レビューを求める変更案）を作る。
 開発者はその変更案にコメントし，追加の修正を依頼できる
 \cite{github2025codingagent}。
-2026年にはGitHubとVS CodeでClaudeやCodexを選べる公開プレビューが
-案内され，複数のエージェントを既存の開発環境から使う形も現れた
+2026年2月4日のAgent HQの告知では，対象プランの利用者がGitHubとVS Codeで
+ClaudeやCodexを公開プレビューとして使えることが案内された
 \cite{github2026agenthq}。
 
 \subsection{第2章の参考文献}
@@ -100,12 +103,12 @@ AIが修正を加えて所定のテストを通せるかを評価する課題集
         Nat Friedmanによる公式発表。記事冒頭で，編集中のコードを手がかりに
         行や関数全体を提案する初期の機能を確認できる。
   \item \textbf{ChatGPTの公開記事（2022年）}\cite{openai2022chatgpt}。
-        コードの不具合を題材にした対話例がある。
+        記事内の「Samples」で「Fix code」を選ぶと，コードの不具合を題材にした対話例を読める。
         AIの問いかけに開発者が情報を補い，原因を絞り込む流れに注目するとよい。
   \item \textbf{SWE-benchの論文（2024年）}\cite{jimenez2024swebench}。
         短い関数の生成よりも実際の開発に近い課題をどう作るかを学べる。
         要旨と冒頭の図から，実際の修正依頼を渡し，変更をテストで評価する流れを追える。
-  \item \textbf{GitHub Copilot coding agentの公開記事（2025年）}\cite{github2025codingagent}。
+  \item \textbf{GitHub Copilot coding agentの公開プレビュー告知（2025年5月19日）}\cite{github2025codingagent}。
         修正依頼をAIに割り当て，AIが作った変更案を人がレビューする手順を
         短い記事で確認できる。2021年の公開記事と比べると，
         AIに任せる作業の単位がどう変わったかが分かる。
